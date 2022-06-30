@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  def products {:name "string", :price "integer", :image_url "string", :description "string"}
-  end
+  get "/products_method", controller: "products", action: "products_method"
 end
 #name, price (integer), image_url, and description

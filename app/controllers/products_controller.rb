@@ -1,8 +1,7 @@
-class ProductController < ActionController::API
-  def products(options)
-    @name = options(:name)
-    @price = options(:price)
-    @image_url = options(:image_url)
-    @description = options(:description)
+class ProductsController < ActionController::API
+  def products_method
+    products = Product.all
+
+    render json: products.as_json
   end
 end
