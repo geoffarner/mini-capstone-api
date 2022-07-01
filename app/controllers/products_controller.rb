@@ -32,6 +32,6 @@ class ProductsController < ActionController::API
     product.save
   end
 
-  def destroy
-    product_id = params["id"]
+  #def destroy
+  # product_id = params["id"]
 end
