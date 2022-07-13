@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   patch "/products/:id" => "products#update"
 
   delete "/products/:id" => "products#destroy"
+  ### users create
+  post "/users" => "users#create"
+  ### session create
+  post "/sessions" => "sessions#create"
+  ### orders create
+  post "/orders" => "orders#create"
 end
-
-#name, price (integer), image_url, and description
