@@ -42,16 +42,18 @@ Content-Type: application/json
   "password": "password"
 }
 
-### purchase create
+### ordercreate
 
 POST http://localhost:3000/orders.json
 Content-Type: application/json
 
 {
-  "user_id": "user_id",
-  "product_id": "product_id",
-  "quantity": "quantity",
-  "subtotal": "subtotal",
-  "tax": "tax",
-  "total": "total",
+  "user_id": 1,
+  "product_id": 2,
+  "quantity": 3,
+  "subtotal": 1.00,
+  "tax": 0.90,
+  "total": 1.90
 }
+### purchase show
+GET http://localhost:3000/orders/1.json

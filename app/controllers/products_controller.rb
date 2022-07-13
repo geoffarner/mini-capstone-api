@@ -5,9 +5,8 @@ class ProductsController < ActionController::API
   end
 
   def show
-    product_id = params["id"]
-    @product = Product.find_by(id: product_id)
-    render template: "products/show"
+    @product = Product.find_by(id: params[:id])
+    render :show
   end
 
   def create
@@ -45,5 +44,10 @@ class ProductsController < ActionController::API
     render :show
   else #unhappy path
     render json: { errors: @product.errors.full_messages }
+  end
+
+  def orders
+    
+    
   end
 end

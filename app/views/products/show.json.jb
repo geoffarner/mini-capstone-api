@@ -5,6 +5,7 @@
   
   description: @product.description,
   supplier:@product.supplier,
+  order: @product.order,
   
   created_at: @product.created_at,
   updated_at: @product.updated_at

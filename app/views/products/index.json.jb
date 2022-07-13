@@ -5,7 +5,8 @@
    
     description: product.description,
     price: product.price,
-    supplier: product.supplier
+    supplier: product.supplier,
+  
     
   }
 end
