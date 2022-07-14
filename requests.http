@@ -1,24 +1,24 @@
-### index
+### products index
 GET  http://localhost:3000/products.json
-### show
-GET http://localhost:3000/products/7.json
-### create
+
+### product create
 POST  http://localhost:3000/products.json
 Content-Type: application/json
 
 {
   "name": "test name",
   "description": "test description",
-  "image_url": "test image_url",
-  "price": "price",
-  "quantity": 1
-
+  "price": 32,
 }
+
+### products show
+GET http://localhost:3000/products/7.json
+
 ### Product Update
 PATCH http://localhost:3000/products/7.json
 Content-Type: application/json
 
-{"quantity": "3"}
+{ "price": 100 }
 
 ### Product Destroy
 DELETE http://localhost:3000/products/9.json
@@ -33,27 +33,30 @@ Content-Type: application/json
   "password": "password",
   "password_confirmation": "password"
 }
+
 ### Sessions create (login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "Boone@example.com",
   "password": "password"
 }
 
 ### ordercreate
-
 POST http://localhost:3000/orders.json
 Content-Type: application/json
 
 {
-  "user_id": 1,
+
   "product_id": 2,
-  "quantity": 3,
-  "subtotal": 1.00,
-  "tax": 0.90,
-  "total": 1.90
+  "quantity": 3
 }
-### purchase show
+
+### order show
 GET http://localhost:3000/orders/1.json
+
+### orders index
+GET http:localhost:3000/orders.json
+
+

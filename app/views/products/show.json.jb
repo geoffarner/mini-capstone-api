@@ -2,11 +2,10 @@
   id: @product.id,
   name: @product.name,
   price: @product.price,
-  
   description: @product.description,
-  supplier:@product.supplier,
-  order: @product.order,
-  
-  created_at: @product.created_at,
-  updated_at: @product.updated_at
+  discounted?: @product.is_discounted?,
+  tax: @product.tax,
+  total: @product.total,
+  supplier: @product.supplier,
+  images: @product.images
 }

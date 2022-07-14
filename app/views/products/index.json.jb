@@ -2,11 +2,12 @@
   {
     id: product.id,
     name: product.name,
-   
-    description: product.description,
     price: product.price,
+    description: product.description,
+    discounted?: product.is_discounted?,
+    tax: product.tax,
+    total: product.total,
     supplier: product.supplier,
-  
-    
+    images: product.images,
   }
 end

@@ -1,15 +1,24 @@
 class Product < ApplicationRecord
+  belongs_to :supplier
   has_many :orders
 
-  validates :name, presence: true
-  validates :price, presence: true,
+  #validates :name, presence: true
+  #validates :price, presence: true,
 
-  def friendly_created_at
-    created_at.strftime("%b %d, %Y")
+  # def friendly_created_at
+  #   created_at.strftime("%b %d, %Y")
+  # end
+
+  # def supplier
+  #   Supplier.find_by(id: supplier_id)
+  # end
+
+  def images
+    Image.where(product_id: id)
   end
 
-  def supplier
-    Supplier.find_by(id: supplier_id)
+  def is_discounted?
+    price <= 10
   end
 
   def tax
@@ -18,14 +27,5 @@ class Product < ApplicationRecord
 
   def total
     total = price + tax
-  end
-
-  def is_discounted?
-    results = ""
-    if price < 10
-      results += "true"
-    else
-      results += "false"
-    end
   end
 end

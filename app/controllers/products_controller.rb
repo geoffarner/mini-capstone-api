@@ -1,7 +1,23 @@
 class ProductsController < ActionController::API
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
     @products = Product.all
-    render template: "products/index"
+    render :index
+  end
+
+  def create
+    @product = Product.new(
+      name: params[:name],
+      price: params[:price],
+      #image_url: params[:image_url],
+      description: params[:description],
+    )
+    if @product.save
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: 418
+    end
   end
 
   def show
@@ -9,45 +25,23 @@ class ProductsController < ActionController::API
     render :show
   end
 
-  def create
-    Product.create(
-      name: params[:name],
-      price: params[:price],
-      image_url: params[:image_url],
-      description: params[:description],
-      quantity: params[:quantity],
-    )
-    render template: "products/show"
-  end
-
   def update
-    product_id = params["id"]
-    @product = Product.find_by(id: product_id)
+    @product = Product.find_by(id: params[:id])
+    @product.name = params[:name] || @product.name
+    @product.price = params[:price] || @product.price
+    @product.description = params[:description] || @product.description
+    #@product.image_url = params["image_url"] || @product.image_url
 
-    @product.name = params["name"] || @product.name
-    @product.price = params["price"] || @product.price
-    @product.description = params["description"] || @product.description
-    @product.image_url = params["image_url"] || @product.image_url
-    @product.quantity = params["quantity"] || @product.quantity
-    @product.save
-    render template: "products/show"
+    if @product.save
+      render :show
+    else
+      render json: { errors: @product.errors.full_messages }, status: 418
+    end
   end
 
   def destroy
-    product_id = params["id"]
-    @product = Product.find_by(id: product_id)
+    product = Product.find_by(id: params[:id])
     product.destroy
-    render json: { message: "Product deleted" }
-  end
-
-  if @product.save #happy path
-    render :show
-  else #unhappy path
-    render json: { errors: @product.errors.full_messages }
-  end
-
-  def orders
-    
-    
+    render json: { message: "Product deleted." }
   end
 end
