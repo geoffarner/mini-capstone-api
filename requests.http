@@ -45,6 +45,7 @@ Content-Type: application/json
 
 ### ordercreate
 POST http://localhost:3000/orders.json
+Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NTEzOTF9.iyEiHkC_k3UQ4PueYYhy41oNtC5BhkqgH9ITHjxQOK4"
 Content-Type: application/json
 
 {
@@ -55,8 +56,10 @@ Content-Type: application/json
 
 ### order show
 GET http://localhost:3000/orders/1.json
+Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NTEzOTF9.iyEiHkC_k3UQ4PueYYhy41oNtC5BhkqgH9ITHjxQOK4"
 
 ### orders index
-GET http:localhost:3000/orders.json
+GET http://localhost:3000/orders.json
+Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NTEzOTF9.iyEiHkC_k3UQ4PueYYhy41oNtC5BhkqgH9ITHjxQOK4"
 
 
