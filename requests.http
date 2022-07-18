@@ -48,11 +48,7 @@ POST http://localhost:3000/orders.json
 Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NTEzOTF9.iyEiHkC_k3UQ4PueYYhy41oNtC5BhkqgH9ITHjxQOK4"
 Content-Type: application/json
 
-{
 
-  "product_id": 2,
-  "quantity": 3
-}
 
 ### order show
 GET http://localhost:3000/orders/1.json
@@ -70,7 +66,7 @@ Content-Type: application/json
 {
   "product_id": 7,
   "quantity": 3,
-  "status": "normal",
+  "status": "carted",
   "order_id": "nil"
 }
 

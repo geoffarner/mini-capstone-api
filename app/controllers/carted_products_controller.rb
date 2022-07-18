@@ -4,7 +4,7 @@ class CartedProductsController < ApplicationController
       user_id: current_user.id,
       product_id: params[:product_id],
       quantity: params[:quantity],
-      status: params[:status],
+      status: "carted",
       order_id: nil,
     )
     if carted.save
@@ -12,5 +12,10 @@ class CartedProductsController < ApplicationController
     else
       render json: { errors: carted.errors.full_messages }, status: 418
     end
+  end
+
+  def index
+    carted_products = current_user.carted_products.where(status: "carted")
+    render carted_products.as_json
   end
 end
