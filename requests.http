@@ -28,8 +28,8 @@ POST http://localhost:3000/users.json
 Content-Type: application/json
 
 {
-  "name": "Boone",
-  "email": "Boone@example.com",
+  "name": "Bill",
+  "email": "bill@example.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -39,7 +39,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "Boone@example.com",
+  "email": "bill@example.com",
   "password": "password"
 }
 
@@ -61,5 +61,17 @@ Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NTEz
 ### orders index
 GET http://localhost:3000/orders.json
 Authorization: Bearer "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NTc4NTEzOTF9.iyEiHkC_k3UQ4PueYYhy41oNtC5BhkqgH9ITHjxQOK4"
+
+### Carted products create
+POST http://localhost:3000/carted_products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NTgyNTQ0MzN9.6uZOqun8kUtCvv3pZ_JJoNqY5Iv56AHCfrvYZhoRbqI
+Content-Type: application/json
+
+{
+  "product_id": 7,
+  "quantity": 3,
+  "status": "normal",
+  "order_id": "nil"
+}
 
 

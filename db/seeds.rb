@@ -8,3 +8,12 @@
 # Supplier.create({ name: "Hassis", email: "has@example.com", phone_number: "111-000-9999" })
 # Supplier.create({ name: "Banana", email: "ban@example.com", phone_number: "555-666-7777" })
 
+# Category.create({ name: "Technology" }) 1
+# Category.create({ name: "Clothes" }) 2
+# Category.create({ name: "Retro" }) 3
+
+# Category.create({ product_id: 7, category_id: 2 })
+# Category.create({ product_id: 8, category_id: 1 })
+# Category.create({ product_id: 14, category_id: 2 })
+# Category.create({ product_id: 15, category_id: 1 })
+# Category.create({ product_id: 16, category_id: 3 })

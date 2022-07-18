@@ -1,10 +1,13 @@
 class ProductsController < ActionController::API
   before_action :authenticate_admin, except: [:index, :show]
 
-  def index
-    @products = Product.all
-    render :index
-  end
+  # def index
+  #   if params[:category]
+  #     category = Category.find_by(name: params[:category])
+  #     @products =
+  #   end
+  #   render :index
+  # end
 
   def create
     @product = Product.new(
