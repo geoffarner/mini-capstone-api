@@ -70,4 +70,6 @@ Content-Type: application/json
   "order_id": "nil"
 }
 
-
+### Carted Product Destroy
+DELETE http://localhost:3000/carted_products/9.json
+Authorization: Bearer

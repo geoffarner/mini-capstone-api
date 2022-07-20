@@ -21,4 +21,7 @@ Rails.application.routes.draw do
   ### carted products index
   get "/carted_products" => "carted_products#index"
   ### carted products show
+
+  ### delete carted products
+  delete "/carted_products/:id" => "carted_products#destroy"
 end
